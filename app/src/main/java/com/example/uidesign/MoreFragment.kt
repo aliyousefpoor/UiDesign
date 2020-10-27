@@ -43,7 +43,7 @@ class MoreFragment : Fragment() {
         tabLayout.getTabAt(2)!!.setIcon(R.drawable.search)
 
         tabLayout.getTabAt(0)!!.icon!!.setColorFilter(
-            resources.getColor(R.color.lightGray),
+            resources.getColor(R.color.darkBlue),
             PorterDuff.Mode.SRC_IN
         )
         tabLayout.getTabAt(1)!!.icon!!.setColorFilter(
@@ -60,7 +60,7 @@ class MoreFragment : Fragment() {
                 viewPager.currentItem = tab!!.position
                 if (tab.position == 0) {
                     tabLayout.getTabAt(0)!!.icon!!.setColorFilter(
-                        resources.getColor(R.color.tab),
+                        resources.getColor(R.color.darkBlue),
                         PorterDuff.Mode.SRC_IN
                     )
                     tabLayout.getTabAt(1)!!.icon!!.setColorFilter(
@@ -77,7 +77,7 @@ class MoreFragment : Fragment() {
                         PorterDuff.Mode.SRC_IN
                     )
                     tabLayout.getTabAt(1)!!.icon!!.setColorFilter(
-                        resources.getColor(R.color.tab),
+                        resources.getColor(R.color.darkBlue),
                         PorterDuff.Mode.SRC_IN
                     )
                     tabLayout.getTabAt(2)!!.icon!!.setColorFilter(
@@ -95,7 +95,7 @@ class MoreFragment : Fragment() {
                         PorterDuff.Mode.SRC_IN
                     )
                     tabLayout.getTabAt(2)!!.icon!!.setColorFilter(
-                        resources.getColor(R.color.tab),
+                        resources.getColor(R.color.darkBlue),
                         PorterDuff.Mode.SRC_IN
                     )
 
