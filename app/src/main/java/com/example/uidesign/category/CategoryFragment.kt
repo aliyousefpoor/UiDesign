@@ -1,4 +1,4 @@
-package com.example.uidesign
+package com.example.uidesign.category
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.uidesign.R
 import com.google.android.material.switchmaterial.SwitchMaterial
 
 class CategoryFragment:Fragment() {

@@ -1,4 +1,4 @@
-package com.example.uidesign
+package com.example.uidesign.more
 
 import android.graphics.PorterDuff
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
+import com.example.uidesign.R
 import com.google.android.material.tabs.TabLayout
 
 class MoreFragment : Fragment() {
@@ -30,7 +31,8 @@ class MoreFragment : Fragment() {
     }
 
     private fun setUpTab() {
-        val adapter = ViewPagerAdapter(parentFragmentManager)
+        val adapter =
+            ViewPagerAdapter(parentFragmentManager)
         adapter.addFragment(MusicFragment(), "Music")
         adapter.addFragment(FavoriteFragment(), "Favorite")
         adapter.addFragment(SearchFragment(), "Search")

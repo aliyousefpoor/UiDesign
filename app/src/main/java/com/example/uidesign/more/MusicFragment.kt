@@ -1,10 +1,11 @@
-package com.example.uidesign
+package com.example.uidesign.more
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.uidesign.R
 
 class MusicFragment: Fragment() {
     override fun onCreateView(

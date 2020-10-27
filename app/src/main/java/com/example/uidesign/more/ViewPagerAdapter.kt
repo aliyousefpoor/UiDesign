@@ -1,4 +1,4 @@
-package com.example.uidesign
+package com.example.uidesign.more
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

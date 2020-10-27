@@ -1,4 +1,4 @@
-package com.example.uidesign
+package com.example.uidesign.more
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,6 +9,8 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.uidesign.PictureModel
+import com.example.uidesign.R
 import java.util.ArrayList
 
 class FavoriteAdapter(private val context: Context, private var picList: ArrayList<PictureModel>) :
