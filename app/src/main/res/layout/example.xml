@@ -8,7 +8,7 @@
         android:id="@+id/textField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:hint="Label"
         app:counterEnabled="true"
         app:counterMaxLength="12"
@@ -28,9 +28,10 @@
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"
+        style="@style/Widget.MaterialComponents.ChipGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textField">
@@ -40,14 +41,16 @@
             style="@style/Widget.MaterialComponents.Chip.Entry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="chip1" />
+            android:text="chip1"
+            app:chipIcon="@drawable/favorite" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip2"
             style="@style/Widget.MaterialComponents.Chip.Action"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello" />
+            android:text="Hello"
+            app:chipIcon="@drawable/account" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip3"
@@ -57,31 +60,55 @@
             android:text="I Love You" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chip4"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="This is Example for Chip" />
-
-        <com.google.android.material.chip.Chip
             android:id="@+id/chi52"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="example" />
     </com.google.android.material.chip.ChipGroup>
 
     <com.google.android.material.slider.Slider
+        android:id="@+id/slider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chipGroup"
+        android:layout_marginTop="20dp"
+        android:stepSize="5.0"
         android:value="20.0"
         android:valueFrom="0.0"
         android:valueTo="100.0"
-        android:stepSize="5.0"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chipGroup" />
+
+    <CheckBox
+        android:id="@+id/resCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Restaurant"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slider" />
+
+    <CheckBox
+        android:id="@+id/fastCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fast Food"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@id/resCheckBox"
+        app:layout_constraintTop_toTopOf="@id/resCheckBox" />
+
+    <CheckBox
+        android:id="@+id/cafeCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cafe Shop"
+        style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+        android:checked="true"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@id/fastCheckBox"
+        app:layout_constraintTop_toTopOf="@id/resCheckBox" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
