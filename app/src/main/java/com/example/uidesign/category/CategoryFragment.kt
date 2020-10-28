@@ -1,5 +1,6 @@
 package com.example.uidesign.category
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +9,10 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.uidesign.R
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.switchmaterial.SwitchMaterial
 
-class CategoryFragment:Fragment() {
+class CategoryFragment : Fragment() {
     private lateinit var switchOne: SwitchMaterial
     private lateinit var switchTwo: SwitchMaterial
     private lateinit var switchThree: SwitchMaterial
@@ -68,6 +70,17 @@ class CategoryFragment:Fragment() {
                         + "Switch4 - " + four,
                 Toast.LENGTH_SHORT
             ).show()
+
+            snackBar(view)
+
         }
+    }
+
+    @SuppressLint("ResourceAsColor")
+    private fun snackBar(view: View) {
+        Snackbar.make(view, "This is SnackBar", Snackbar.LENGTH_LONG).setAction("Action") {
+
+            Toast.makeText(context, "Switch1 -  ", Toast.LENGTH_SHORT).show()
+        }.show()
     }
 }
