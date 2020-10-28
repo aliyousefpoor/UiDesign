@@ -15,12 +15,12 @@ class MusicFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.music_fragment, container, false)
+        return inflater.inflate(R.layout.example, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        musicText = view.findViewById(R.id.musicText)
+//        musicText = view.findViewById(R.id.musicText)
 
 
     }
