@@ -28,8 +28,8 @@ class MoreFragment : Fragment() {
         tabLayout = view.findViewById(R.id.tabLayout)
 
         setUpTab()
-    }
 
+    }
     private fun setUpTab() {
         val adapter =
             ViewPagerAdapter(parentFragmentManager)
