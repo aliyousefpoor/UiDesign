@@ -6,13 +6,85 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/musicText"
+        android:id="@+id/pinText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Music Fragment"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="40dp"
+        android:text="PIN :"
+        app:layout_constraintStart_toStartOf="@id/pinView1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.chaos.view.PinView
+        android:id="@+id/pinView1"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:cursorVisible="true"
+        android:hint=".Hint"
+        android:inputType="text"
+        app:cursorWidth="2dp"
+        app:hideLineWhenFilled="false"
+        app:itemCount="4"
+        app:itemHeight="40dp"
+        app:itemRadius="4dp"
+        app:itemSpacing="4dp"
+        app:itemWidth="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/pinText1"
+        app:lineColor="@color/lightGray"
+        app:lineWidth="2dp"
+        app:viewType="rectangle">
+
+        <requestFocus />
+
+    </com.chaos.view.PinView>
+
+    <TextView
+        android:id="@+id/pinText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="PIN :"
+        app:layout_constraintStart_toStartOf="@id/pinView1"
+        app:layout_constraintTop_toBottomOf="@id/pinView1" />
+
+    <com.chaos.view.PinView
+        android:id="@+id/pinView2"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:cursorVisible="true"
+        android:inputType="textPassword"
+        android:textColor="@color/blue"
+        android:textSize="10sp"
+        app:cursorColor="@color/blue"
+        app:cursorWidth="2dp"
+        app:hideLineWhenFilled="false"
+        app:itemCount="4"
+        app:itemHeight="40dp"
+        app:itemRadius="4dp"
+        app:itemSpacing="4dp"
+        app:itemWidth="40dp"
+        app:layout_constraintEnd_toEndOf="@id/pinView1"
+        app:layout_constraintStart_toStartOf="@id/pinView1"
+        app:layout_constraintTop_toBottomOf="@id/pinText2"
+        app:lineColor="@color/blue"
+        app:lineWidth="2dp"
+        app:viewType="rectangle" />
+
+    <Button
+        android:id="@+id/getPin"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:text="show"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/pinView1"
+        app:layout_constraintStart_toStartOf="@id/pinView1"
+        app:layout_constraintTop_toBottomOf="@id/pinView2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

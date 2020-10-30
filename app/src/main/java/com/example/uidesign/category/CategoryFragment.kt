@@ -70,17 +70,6 @@ class CategoryFragment : Fragment() {
                         + "Switch4 - " + four,
                 Toast.LENGTH_SHORT
             ).show()
-
-            snackBar(view)
-
         }
-    }
-
-    @SuppressLint("ResourceAsColor")
-    private fun snackBar(view: View) {
-        Snackbar.make(view, "This is SnackBar", Snackbar.LENGTH_LONG).setAction("Action") {
-
-            Toast.makeText(context, "Switch1 -  ", Toast.LENGTH_SHORT).show()
-        }.show()
     }
 }

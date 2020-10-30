@@ -66,6 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@drawable/custom_input"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:text="get"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
