@@ -8,5 +8,6 @@
     <color name="black">#111</color>
     <color name="lightGray">#C8C4C4</color>
     <color name="darkBlue">#1522A5</color>
+    <color name="lighterGray">#E4E4E4</color>
 
 </resources>
