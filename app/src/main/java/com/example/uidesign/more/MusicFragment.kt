@@ -46,7 +46,7 @@ class MusicFragment : androidx.fragment.app.Fragment() {
         countText = view.findViewById(R.id.textCount)
         increaseButton = view.findViewById(R.id.increaseCount)
         decreaseButton = view.findViewById(R.id.decreaseCount)
-        Log.d(TAG, "onViewCreated: $count")
+
         pinView1.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 pinViewText1 = s.toString()
@@ -81,13 +81,12 @@ class MusicFragment : androidx.fragment.app.Fragment() {
 
 
         increaseButton.setOnClickListener {
-            Log.d(TAG, "onViewCreated: $count")
             if (count <= 3) {
                 count += 1
                 countText.text = " $count نفر "
             } else if (count == 4) {
                 count += 1
-                countText.text = " $count نفر (1 نفر اضافه) "
+                countText.text = " $count نفر (۱ نفر اضافه) "
             }
         }
 
