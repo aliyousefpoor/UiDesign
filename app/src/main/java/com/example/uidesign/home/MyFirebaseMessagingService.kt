@@ -10,6 +10,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.media.RingtoneManager
 import android.util.Log
+import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import com.example.uidesign.MainActivity
 import com.example.uidesign.R
@@ -19,6 +20,13 @@ import com.google.firebase.messaging.RemoteMessage
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
     private val TAG = "MyFirebaseMessagingService"
+
+    @SuppressLint("LongLogTag")
+    override fun onNewToken(token: String) {
+        super.onNewToken(token)
+        Log.d(TAG, "onNewToken: $token")
+
+    }
 
     @SuppressLint("LongLogTag")
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
@@ -49,7 +57,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             mChannel.setShowBadge(false)
             notificationManager.createNotificationChannel(mChannel)
 
-            val builer = NotificationCompat.Builder(context, channelID)
+            val notificationBuilder = NotificationCompat.Builder(context, channelID)
                 .setSmallIcon(R.drawable.notification)
                 .setContentTitle(title)
                 .setContentText(body)
@@ -61,8 +69,8 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             stackBuilder.addNextIntent(resultIntent)
             val pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT)
 
-            builer.setContentIntent(pendingIntent)
-            notificationManager.notify(notificationID, builer.build())
+            notificationBuilder.setContentIntent(pendingIntent)
+            notificationManager.notify(notificationID, notificationBuilder.build())
         }
     }
 }

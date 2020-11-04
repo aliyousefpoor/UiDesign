@@ -56,10 +56,10 @@ class HomeFragment : Fragment() {
             mChannel.setShowBadge(false)
             notificationManager.createNotificationChannel(mChannel)
 
-            val builer = NotificationCompat.Builder(context, channelID)
+            val notificationBuilder = NotificationCompat.Builder(context, channelID)
                 .setSmallIcon(R.drawable.notification)
-                .setContentTitle("Firebase Notification")
-                .setContentText("My first FCM Notification in my App")
+                .setContentTitle("Notification")
+                .setContentText("My first Notification in my App")
                 .setSound(soundUri)
 
             val resultIntent = Intent(context, MainActivity::class.java)
@@ -68,8 +68,8 @@ class HomeFragment : Fragment() {
             stackBuilder.addNextIntent(resultIntent)
             val pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT)
 
-            builer.setContentIntent(pendingIntent)
-            notificationManager.notify(notificationID, builer.build())
+            notificationBuilder.setContentIntent(pendingIntent)
+            notificationManager.notify(notificationID, notificationBuilder.build())
         }
     }
 }
