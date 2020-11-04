@@ -29,9 +29,9 @@ class SearchAdapter(private var arrayList: MutableList<SearchModel>, private var
     }
 
     class SearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var searchTitle: TextView = itemView.findViewById(R.id.title)
-        var searchYear: TextView = itemView.findViewById(R.id.year)
-        var avatar: ImageView = itemView.findViewById(R.id.avatar)
+        private var searchTitle: TextView = itemView.findViewById(R.id.title)
+        private var searchYear: TextView = itemView.findViewById(R.id.year)
+        private var avatar: ImageView = itemView.findViewById(R.id.avatar)
 
         fun onBind(
             arrayList: SearchModel,

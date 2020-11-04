@@ -36,30 +36,26 @@ class CategoryFragment : Fragment() {
         submit = view.findViewById(R.id.button)
 
         submit.setOnClickListener {
-            val one: String
-            val two: String
-            val three: String
-            val four: String
 
-            one = if (switchOne.isChecked) {
+            val one: String = if (switchOne.isChecked) {
                 switchOne.textOn.toString()
             } else {
                 switchOne.textOff.toString()
             }
 
-            two = if (switchTwo.isChecked) {
+            val two: String = if (switchTwo.isChecked) {
                 switchTwo.textOn.toString()
             } else {
                 switchTwo.textOff.toString()
             }
 
-            three = if (switchThree.isChecked) {
+            val three: String = if (switchThree.isChecked) {
                 switchThree.textOn.toString()
             } else {
                 switchThree.textOff.toString()
             }
 
-            four = if (switchFour.isChecked) {
+            val four: String = if (switchFour.isChecked) {
                 switchFour.textOn.toString()
             } else {
                 switchFour.textOff.toString()
