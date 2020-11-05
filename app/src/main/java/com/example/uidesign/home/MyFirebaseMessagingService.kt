@@ -1,5 +1,6 @@
 package com.example.uidesign.home
 
+import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -8,39 +9,35 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.media.RingtoneManager
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
+import android.util.Log
 import androidx.core.app.NotificationCompat
-import androidx.fragment.app.Fragment
 import com.example.uidesign.MainActivity
 import com.example.uidesign.R
+import com.google.firebase.messaging.FirebaseMessagingService
+import com.google.firebase.messaging.RemoteMessage
 
-class HomeFragment : Fragment() {
-    private lateinit var subscribe: Button
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.home_fragment, container, false)
+@SuppressLint("LongLogTag")
+class MyFirebaseMessagingService : FirebaseMessagingService() {
+    private val TAG = "MyFirebaseMessagingService"
+
+    override fun onNewToken(token: String) {
+        super.onNewToken(token)
+        Log.d(TAG, "onNewToken: $token")
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        subscribe = view.findViewById(R.id.notificationButton)
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        Log.d(TAG, "onMessageReceived: $remoteMessage")
 
-        subscribe.setOnClickListener {
-            showNotification()
+        if (remoteMessage.notification != null) {
+            showNotification(remoteMessage.notification?.title, remoteMessage.notification?.body)
         }
     }
 
-    private fun showNotification() {
+    private fun showNotification(title: String?, body: String?) {
+
         val notificationID = 234
-        val context = requireContext()
-        val soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+        val context = applicationContext
+        val soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
         val notificationManager =
             context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
@@ -58,8 +55,8 @@ class HomeFragment : Fragment() {
 
             val notificationBuilder = NotificationCompat.Builder(context, channelID)
                 .setSmallIcon(R.drawable.notification)
-                .setContentTitle("Notification")
-                .setContentText("My first Notification in my App")
+                .setContentTitle(title)
+                .setContentText(body)
                 .setSound(soundUri)
 
             val resultIntent = Intent(context, MainActivity::class.java)
