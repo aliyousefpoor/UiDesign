@@ -33,43 +33,6 @@ class HomeFragment : Fragment() {
         subscribe = view.findViewById(R.id.notificationButton)
 
         subscribe.setOnClickListener {
-            showNotification()
-        }
-    }
-
-    private fun showNotification() {
-        val notificationID = 234
-        val context = requireContext()
-        val soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
-        val notificationManager =
-            context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            val channelID = "my_channel_01"
-            val name: CharSequence = "my_channel"
-            val description = "This is my channel"
-            val importance: Int = NotificationManager.IMPORTANCE_HIGH
-            val mChannel = NotificationChannel(channelID, name, importance)
-            mChannel.description = description
-            mChannel.enableLights(true)
-            mChannel.lightColor = Color.RED
-            mChannel.enableVibration(true)
-            mChannel.setShowBadge(false)
-            notificationManager.createNotificationChannel(mChannel)
-
-            val notificationBuilder = NotificationCompat.Builder(context, channelID)
-                .setSmallIcon(R.drawable.notification)
-                .setContentTitle("Notification")
-                .setContentText("My first Notification in my App")
-                .setSound(soundUri)
-
-            val resultIntent = Intent(context, MainActivity::class.java)
-            val stackBuilder = TaskStackBuilder.create(context)
-            stackBuilder.addParentStack(MainActivity::class.java)
-            stackBuilder.addNextIntent(resultIntent)
-            val pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT)
-
-            notificationBuilder.setContentIntent(pendingIntent)
-            notificationManager.notify(notificationID, notificationBuilder.build())
         }
     }
 }
