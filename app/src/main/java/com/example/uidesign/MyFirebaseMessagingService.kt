@@ -1,4 +1,4 @@
-package com.example.uidesign.home
+package com.example.uidesign
 
 import android.annotation.SuppressLint
 import android.app.NotificationChannel
@@ -11,8 +11,6 @@ import android.graphics.Color
 import android.media.RingtoneManager
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import com.example.uidesign.MainActivity
-import com.example.uidesign.R
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
