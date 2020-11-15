@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+
+
         navigation = findViewById(R.id.bottomMenu)
         homeNavHost = findViewById(R.id.navHostHomeFragment)
         moreNavHost = findViewById(R.id.navHostMoreFragment)

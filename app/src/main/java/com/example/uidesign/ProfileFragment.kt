@@ -10,7 +10,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.bottom_sheet_layout.*
 
-class ProfileFragment :  Fragment() {
+class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -23,22 +23,22 @@ class ProfileFragment :  Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         share.setOnClickListener {
-            Toast.makeText(context,"Share ...",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Share ...", Toast.LENGTH_SHORT).show()
         }
         link.setOnClickListener {
-            Toast.makeText(context,"Get Link ...",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Get Link ...", Toast.LENGTH_SHORT).show()
         }
         copy.setOnClickListener {
-            Toast.makeText(context,"Copy ...",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Copy ...", Toast.LENGTH_SHORT).show()
         }
         edit.setOnClickListener {
-            Toast.makeText(context,"Edit ...",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Edit ...", Toast.LENGTH_SHORT).show()
         }
         delete.setOnClickListener {
-            Toast.makeText(context,"Delete ...",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Delete ...", Toast.LENGTH_SHORT).show()
         }
         profile.setOnClickListener {
-            Toast.makeText(context,"Profile ...",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Profile ...", Toast.LENGTH_SHORT).show()
         }
     }
 }
