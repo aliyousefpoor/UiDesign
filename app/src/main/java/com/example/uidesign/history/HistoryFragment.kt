@@ -14,7 +14,6 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.uidesign.R
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.jar.Manifest
 
 class HistoryFragment : Fragment() {
     private lateinit var name: EditText
@@ -43,23 +42,21 @@ class HistoryFragment : Fragment() {
             ActivityCompat.requestPermissions(
                 requireActivity(),
                 arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),
-                10)
+                10
+            )
 
         enter.setOnClickListener {
-            val bundle = Bundle()
-            Toast.makeText(
-                context,
-                "Go to WebSocket",
-                Toast.LENGTH_SHORT
-            ).show()
-            bundle.putString("name", name.text.toString())
-            navController.navigate(R.id.action_historyFragment2_to_chatFragment, bundle)
-        }
-        navController.addOnDestinationChangedListener { controller, destination, arguments ->
-            when (destination.id) {
-                R.id.action_historyFragment2_to_chatFragment -> {
-                    bottomMenu.visibility = View.GONE
-                }
+            if (name.text.isEmpty()) {
+                Toast.makeText(context, "Name Can't be Null", Toast.LENGTH_SHORT).show()
+            } else {
+                val bundle = Bundle()
+                Toast.makeText(
+                    context,
+                    "Go to WebSocket",
+                    Toast.LENGTH_SHORT
+                ).show()
+                bundle.putString("name", name.text.toString())
+                navController.navigate(R.id.action_historyFragment2_to_chatFragment, bundle)
             }
         }
     }
