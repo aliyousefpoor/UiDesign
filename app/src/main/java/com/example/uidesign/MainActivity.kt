@@ -77,6 +77,13 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.historyFragment -> {
                     navController = Navigation.findNavController(this, R.id.navHostHistoryFragment)
+                    navController.addOnDestinationChangedListener { controller, destination, arguments ->
+                        if (arguments?.getBoolean("isFullScreen") == true) {
+                            navigation.visibility = View.GONE
+                        } else {
+                            navigation.visibility = View.VISIBLE
+                        }
+                    }
                     homeNavHost.visibility = View.GONE
                     categoryNavHost.visibility = View.GONE
                     moreNavHost.visibility = View.GONE
@@ -88,6 +95,12 @@ class MainActivity : AppCompatActivity() {
                     false
                 }
             }
+        }
+    }
+
+    override fun onBackPressed() {
+        if (!navController.navigateUp()) {
+            super.onBackPressed()
         }
     }
 }

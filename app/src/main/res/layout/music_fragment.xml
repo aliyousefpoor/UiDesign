@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/pinText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="PIN :"
+        app:layout_constraintStart_toStartOf="@id/pinView1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.chaos.view.PinView
+        android:id="@+id/pinView1"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:cursorVisible="true"
+        android:hint=".Hint"
+        android:inputType="text"
+        app:cursorWidth="2dp"
+        app:hideLineWhenFilled="false"
+        app:itemCount="4"
+        app:itemHeight="40dp"
+        app:itemRadius="4dp"
+        app:itemSpacing="4dp"
+        app:itemWidth="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pinText1"
+        app:lineColor="@color/gray"
+        app:lineWidth="1dp"
+        app:viewType="rectangle">
+
+        <requestFocus />
+
+    </com.chaos.view.PinView>
+
+    <TextView
+        android:id="@+id/pinText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="PIN :"
+        app:layout_constraintStart_toStartOf="@id/pinView2"
+        app:layout_constraintTop_toBottomOf="@id/pinView1" />
+
+    <com.chaos.view.PinView
+        android:id="@+id/pinView2"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:cursorVisible="true"
+        android:inputType="textPassword"
+        android:textColor="@color/blue"
+        android:textSize="10sp"
+        app:cursorColor="@color/blue"
+        app:cursorWidth="2dp"
+        app:hideLineWhenFilled="false"
+        app:itemCount="5"
+        app:itemHeight="40dp"
+        app:itemRadius="4dp"
+        app:itemSpacing="4dp"
+        app:itemWidth="40dp"
+        app:layout_constraintEnd_toEndOf="@id/pinView1"
+        app:layout_constraintStart_toStartOf="@id/pinView1"
+        app:layout_constraintTop_toBottomOf="@id/pinText2"
+        app:lineColor="@color/blue"
+        app:lineWidth="1dp"
+        app:viewType="rectangle" />
+
+    <Button
+        android:id="@+id/getPin"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:text="show"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/pinView1"
+        app:layout_constraintStart_toStartOf="@id/pinView1"
+        app:layout_constraintTop_toBottomOf="@id/pinView2" />
+
+    <TextView
+        android:id="@+id/textCount"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext"
+        android:gravity="center_vertical"
+        android:hint=" ۰  نفر"
+        android:paddingEnd="10dp"
+        android:textColor="@color/black"
+        android:textDirection="rtl"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/pinView2"
+        app:layout_constraintStart_toStartOf="@id/pinView2"
+        app:layout_constraintTop_toBottomOf="@id/getPin" />
+
+
+    <ImageButton
+        android:id="@+id/increaseCount"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/add_button"
+        android:gravity="center"
+        android:src="@drawable/add_button_style"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@id/textCount"
+        app:layout_constraintStart_toEndOf="@id/decreaseCount"
+        app:layout_constraintTop_toTopOf="@id/textCount" />
+
+    <ImageButton
+        android:id="@+id/decreaseCount"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/minus_button"
+        android:gravity="center"
+        android:src="@drawable/minus_button_style"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@id/textCount"
+        app:layout_constraintEnd_toStartOf="@id/increaseCount"
+        app:layout_constraintStart_toStartOf="@id/textCount"
+        app:layout_constraintTop_toTopOf="@id/textCount" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

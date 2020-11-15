@@ -1,5 +1,6 @@
-package com.example.uidesign
+package com.example.uidesign.category
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +8,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.uidesign.R
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.switchmaterial.SwitchMaterial
 
-class CategoryFragment:Fragment() {
+class CategoryFragment : Fragment() {
     private lateinit var switchOne: SwitchMaterial
     private lateinit var switchTwo: SwitchMaterial
     private lateinit var switchThree: SwitchMaterial
@@ -33,30 +36,26 @@ class CategoryFragment:Fragment() {
         submit = view.findViewById(R.id.button)
 
         submit.setOnClickListener {
-            val one: String
-            val two: String
-            val three: String
-            val four: String
 
-            one = if (switchOne.isChecked) {
+            val one: String = if (switchOne.isChecked) {
                 switchOne.textOn.toString()
             } else {
                 switchOne.textOff.toString()
             }
 
-            two = if (switchTwo.isChecked) {
+            val two: String = if (switchTwo.isChecked) {
                 switchTwo.textOn.toString()
             } else {
                 switchTwo.textOff.toString()
             }
 
-            three = if (switchThree.isChecked) {
+            val three: String = if (switchThree.isChecked) {
                 switchThree.textOn.toString()
             } else {
                 switchThree.textOff.toString()
             }
 
-            four = if (switchFour.isChecked) {
+            val four: String = if (switchFour.isChecked) {
                 switchFour.textOn.toString()
             } else {
                 switchFour.textOff.toString()

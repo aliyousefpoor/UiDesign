@@ -7,8 +7,21 @@
 
     <fragment
         android:id="@+id/historyFragment2"
-        android:name="com.example.uidesign.HistoryFragment"
+        android:name="com.example.uidesign.history.HistoryFragment"
         android:label="HistoryFragment"
-        tools:layout="@layout/history_fragment"
-        />
+        tools:layout="@layout/history_fragment">
+        <action
+            android:id="@+id/action_historyFragment2_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.uidesign.history.ChatFragment"
+        android:label="ChatFragment"
+        tools:layout="@layout/chat_fragment">
+        <argument
+            android:name="isFullScreen"
+            android:defaultValue="true"
+            app:argType="boolean"/>
+    </fragment>
 </navigation>

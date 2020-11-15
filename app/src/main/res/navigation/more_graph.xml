@@ -7,8 +7,36 @@
 
     <fragment
         android:id="@+id/moreFragment2"
-        android:name="com.example.uidesign.MoreFragment"
+        android:name="com.example.uidesign.more.MoreFragment"
         android:label="MoreFragment"
         tools:layout="@layout/more_fragment"
+        >
+        <action
+            android:id="@+id/action_moreFragment2_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_moreFragment2_to_musicFragment"
+            app:destination="@id/musicFragment" />
+        <action
+            android:id="@+id/action_moreFragment2_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.uidesign.more.FavoriteFragment"
+        android:label="FavoriteFragment"
+        tools:layout="@layout/favorite_fragment"
+        />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.uidesign.more.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/search_fragment"
+        />
+    <fragment
+        android:id="@+id/musicFragment"
+        android:name="com.example.uidesign.more.MusicFragment"
+        android:label="MusicFragment"
+        tools:layout="@layout/music_fragment"
         />
 </navigation>
