@@ -141,25 +141,24 @@ class ChatFragment : Fragment(), TextWatcher {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         message.addTextChangedListener(this)
-
         send.setOnClickListener {
-            if (message.text.isEmpty()) {
 
-            } else {
-                val jsonObject = JSONObject()
-                try {
-                    jsonObject.put("name", name)
-                    jsonObject.put("message", message.text.toString())
-                    webSocket.send(jsonObject.toString())
-                    jsonObject.put("isSent", true);
-                    messageAdapter.addItem(jsonObject);
+            send.setImageResource(R.drawable.send)
+            message.setBackgroundResource(R.drawable.send_press)
+            val jsonObject = JSONObject()
+            try {
+                jsonObject.put("name", name)
+                jsonObject.put("message", message.text.toString())
+                webSocket.send(jsonObject.toString())
+                jsonObject.put("isSent", true);
+                messageAdapter.addItem(jsonObject);
 
-                    recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
-                    resetMessageEdit()
-                } catch (e: JSONException) {
-                    e.printStackTrace()
-                }
+                recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
+                resetMessageEdit()
+            } catch (e: JSONException) {
+                e.printStackTrace()
             }
+
         }
 
         pickImage.setOnClickListener {

@@ -15,5 +15,8 @@
         android:padding="8dp"
         android:src="@drawable/dthree"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="100dp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,8 +9,9 @@
     <color name="lightGray">#C8C4C4</color>
     <color name="darkBlue">#1522A5</color>
     <color name="lighterGray">#F4F4F4</color>
-    <color name="green">#1DC312</color>
+    <color name="green">#B3F3A1</color>
     <color name="white">#fff</color>
+    <color name="red">#F42222</color>
 
 
 </resources>
