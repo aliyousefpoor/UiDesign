@@ -9,6 +9,14 @@
         android:id="@+id/homeFragment2"
         android:name="com.example.uidesign.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/home_fragment"
-        />
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_homeFragment2_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.uidesign.home.MapFragment"
+        android:label="MapFragment"
+        tools:layout="@layout/map_fragment" />
 </navigation>

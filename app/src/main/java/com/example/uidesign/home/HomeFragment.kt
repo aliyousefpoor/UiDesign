@@ -15,11 +15,17 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.example.uidesign.MainActivity
 import com.example.uidesign.R
+import kotlinx.android.synthetic.main.map_fragment.*
 
 class HomeFragment : Fragment() {
     private lateinit var subscribe: Button
+    private lateinit var mapButton: Button
+    private lateinit var navController: NavController
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,10 +37,16 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         subscribe = view.findViewById(R.id.notificationButton)
+        mapButton = view.findViewById(R.id.mapButton)
+        navController = Navigation.findNavController(view)
 
         subscribe.setOnClickListener {
             showNotification()
         }
+        mapButton.setOnClickListener {
+            navController.navigate(R.id.action_homeFragment2_to_mapFragment)
+        }
+
     }
 
     private fun showNotification() {

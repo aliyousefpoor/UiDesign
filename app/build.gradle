@@ -85,6 +85,8 @@ dependencies {
     implementation 'com.squareup.moshi:moshi:1.9.2'
     androidTestImplementation 'com.squareup.moshi:moshi-kotlin-codegen:1.9.2'
 
+    //Map
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
 
 
     def lifecycle_version = "2.2.0"

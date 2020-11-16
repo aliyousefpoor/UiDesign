@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.historyFragment -> {
                     navController = Navigation.findNavController(this, R.id.navHostHistoryFragment)
                     navController.addOnDestinationChangedListener { controller, destination, arguments ->
-                        if (arguments?.getBoolean("isFullScreen") == true) {
+                        if (arguments?.getBoolean("chatFullScreen") == true) {
                             navigation.visibility = View.GONE
                         } else {
                             navigation.visibility = View.VISIBLE

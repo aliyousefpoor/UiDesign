@@ -20,7 +20,7 @@
         android:label="ChatFragment"
         tools:layout="@layout/chat_fragment">
         <argument
-            android:name="isFullScreen"
+            android:name="chatFullScreen"
             android:defaultValue="true"
             app:argType="boolean"/>
     </fragment>
