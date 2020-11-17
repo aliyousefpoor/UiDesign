@@ -73,38 +73,45 @@ class MusicFragment : androidx.fragment.app.Fragment() {
 
 
         pinButton.setOnClickListener {
-            Toast.makeText(
-                context, "Your Pin is : $pinViewText1 + $pinViewText2",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-
-
-        increaseButton.setOnClickListener {
-            if (count <= 3) {
-                count += 1
-                countText.text = " $count نفر "
-            } else if (count == 4) {
-                count += 1
-                countText.text = " $count نفر (۱ نفر اضافه) "
-            }
-        }
-
-        decreaseButton.setOnClickListener {
-            if (count == 0) {
-                countText.text = ""
+            if (pinViewText1.isNullOrEmpty() && pinViewText2.isNullOrEmpty()) {
                 Toast.makeText(
-                    context, "Count can't be negative",
+                    context, "Pin View is Empty",
                     Toast.LENGTH_SHORT
                 ).show()
-            } else if (count == 1) {
-                count -= 1
-                countText.text = ""
             } else {
-                count -= 1
-                countText.text = " $count نفر "
+                Toast.makeText(
+                    context, "Your Pin is : $pinViewText1 + $pinViewText2",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+
+            increaseButton.setOnClickListener {
+                if (count <= 3) {
+                    count += 1
+                    countText.text = " $count نفر "
+                } else if (count == 4) {
+                    count += 1
+                    countText.text = " $count نفر (۱ نفر اضافه) "
+                }
+            }
+
+            decreaseButton.setOnClickListener {
+                if (count == 0) {
+                    countText.text = ""
+                    Toast.makeText(
+                        context, "Count can't be negative",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else if (count == 1) {
+                    count -= 1
+                    countText.text = ""
+                } else {
+                    count -= 1
+                    countText.text = " $count نفر "
+                }
             }
         }
-    }
 
+    }
 }
