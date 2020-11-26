@@ -24,6 +24,8 @@ import kotlinx.android.synthetic.main.map_fragment.*
 class HomeFragment : Fragment() {
     private lateinit var subscribe: Button
     private lateinit var mapButton: Button
+    private lateinit var osmButton: Button
+
     private lateinit var navController: NavController
 
     override fun onCreateView(
@@ -38,6 +40,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         subscribe = view.findViewById(R.id.notificationButton)
         mapButton = view.findViewById(R.id.mapButton)
+        osmButton = view.findViewById(R.id.osmButton)
         navController = Navigation.findNavController(view)
 
         subscribe.setOnClickListener {
@@ -45,6 +48,10 @@ class HomeFragment : Fragment() {
         }
         mapButton.setOnClickListener {
             navController.navigate(R.id.action_homeFragment2_to_mapFragment)
+        }
+
+        osmButton.setOnClickListener {
+            navController.navigate(R.id.action_homeFragment2_to_OSMFragment)
         }
 
     }

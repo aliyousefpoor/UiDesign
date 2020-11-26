@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_homeFragment2_to_mapFragment"
             app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_OSMFragment"
+            app:destination="@id/OSMFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.example.uidesign.home.MapFragment"
         android:label="MapFragment"
         tools:layout="@layout/map_fragment" />
+    <fragment
+        android:id="@+id/OSMFragment"
+        android:name="com.example.uidesign.home.OSMFragment"
+        android:label="OSMFragment"
+        tools:layout="@layout/osm_layout" />
 </navigation>
