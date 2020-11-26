@@ -101,4 +101,8 @@ dependencies {
     // Saved state module for ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
 
+    //OSM
+    implementation 'org.osmdroid:osmdroid-android:6.1.2'
+    implementation 'com.github.MKergall:osmbonuspack:6.4'
+
 }
